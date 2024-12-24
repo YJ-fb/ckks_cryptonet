@@ -1,7 +1,7 @@
 # 基于Python的支持ckks加密的cryptonet
 
 ## 简介
-本项目是一个基于ckks的用于实现和测试深度学习模型加密推理的Python库，它是在[CNN](https://poloclub/cnn-explainer)的基础上进行的扩展与改进。参考论文 [CryptoNet](https://proceedings.mlr.press/v48/gilad-bachrach16.pdf)将CKKS同态加密与CNN神经网络结合起来，本项目旨在简化CKKS同态加密（HE）技术的应用，支持训练神经网络模型，并能够在不泄露数据隐私的情况下执行加密推理。
+本项目是一个基于ckks的用于实现和测试深度学习模型加密推理的Python库，它是在[CNN](https://github.com/poloclub/cnn-explainer)的基础上进行的扩展与改进。参考论文 [CryptoNet](https://proceedings.mlr.press/v48/gilad-bachrach16.pdf)将CKKS同态加密与CNN神经网络结合起来，本项目旨在简化CKKS同态加密（HE）技术的应用，支持训练神经网络模型，并能够在不泄露数据隐私的情况下执行加密推理。
 
 ## 特性
 - 继承自CNN神经网络：保留了原始神经网络的核心功能和结构。
