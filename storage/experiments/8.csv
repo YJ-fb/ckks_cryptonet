@@ -1,0 +1,6 @@
+round_epochs,loss,acc,val_loss,val_acc,batch_size,dropout,epochs,last_activation,learning_rate,loss,optimizer
+50,0.06263757481239736,0.98073334,0.06744662882760168,0.9802,200,0.3,50,softmax,0.01,categorical_crossentropy,SGD
+50,0.06543971899275978,0.9793,0.07667734276503324,0.9767,200,0.3,50,softmax,0.01,categorical_crossentropy,SGD
+50,0.0684465618338436,0.97796667,0.07061918511986733,0.9811,200,0.3,50,softmax,0.01,categorical_crossentropy,SGD
+50,0.06427540171891451,0.9795167,0.06563711177557707,0.983,200,0.3,50,softmax,0.01,categorical_crossentropy,SGD
+50,0.06533504941811165,0.97961664,0.07104485742747783,0.9812,200,0.3,50,softmax,0.01,categorical_crossentropy,SGD

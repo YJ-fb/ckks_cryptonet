@@ -1,0 +1,5 @@
+round_epochs,loss,acc,val_loss,val_acc,batch_size,epochs,last_activation,loss,optimizer
+50,0.008716631141422113,0.9979,0.238740582714844,0.9718,255,50,softmax,categorical_crossentropy,Adam
+50,0.0066771383546272165,0.99801666,0.24537288946323096,0.9695,451,50,softmax,categorical_crossentropy,Adam
+20,0.09157422299832106,0.9722833,0.13062927426807583,0.9601,402,20,softmax,categorical_crossentropy,SGD
+20,0.022330682351238404,0.99371666,0.2385711937555112,0.9687,304,20,softmax,categorical_crossentropy,Adam
