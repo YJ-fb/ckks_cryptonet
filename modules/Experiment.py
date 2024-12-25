@@ -66,6 +66,7 @@ class Experiment:
             print(analyze_object.rounds2high('val_acc'))
             print("")
 
+             # 找出最佳参数，并根据验证准确度(val_acc)和验证损失(val_loss)进行排序
             best_params = analyze_object.best_params('val_acc', [])
             print("Best parameters (val_acc) rank:")
             print(best_params)
