@@ -28,8 +28,8 @@ class Experiment:
         
     # 将同一目录下的所有CSV文件合并为一个最终的CSV文件
     def computeResult(self):
-        os.chdir("all_results")
-        files = [i for i in glob.glob('*.{}'.format('csv'))]
+        os.chdir("all_results")  # 切换到包含结果文件的目录
+        files = [i for i in glob.glob('*.{}'.format('csv'))]  # 获取所有CSV文件
         final = pd.concat([pd.read_csv(f) for f in files ])
         final.to_csv( "final.csv", index=False, encoding='utf-8-sig')
     
