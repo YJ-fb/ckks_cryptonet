@@ -40,7 +40,13 @@ class Cryptonet:
         self.encryptors = []
         for i in range(p_moduli.__len__()):
            self.encryptors.append(EncryptedNet(test, test_labels, model, coeff_modulus, p_moduli[i], precision, False))
-    
+
+    def train(self, epochs=10):
+        """Train the model using the provided training data and save the trained model.
+
+        Args:
+            epochs (int, optional): Number of epochs to train the model. Defaults to 10.
+        """
        
     def evaluate(self):
         for i in range(self.encryptors.__len__()):
