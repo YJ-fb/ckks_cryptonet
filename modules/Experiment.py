@@ -12,7 +12,7 @@ import talos
 from CryptoNet import mnist_model
 from CryptoNet import util
 
-verbosity = True
+verbosity = True  # 全局变量，控制输出的详细程度
 
 class Experiment:
     

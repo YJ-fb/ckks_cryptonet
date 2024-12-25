@@ -7,7 +7,7 @@ from skimage.util import view_as_blocks
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras import utils
 from os import path
-
+import matplotlib.pyplot as plt
 
 class Dataset:
     
