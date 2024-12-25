@@ -144,3 +144,6 @@ class Dataset:
             ax[i].set_title(f'Label: {np.argmax(labels[i])}')
             ax[i].axis('off')
          plt.show()
+
+    def verify_integrity(self, dataset, labels):
+        """   """
