@@ -5,6 +5,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from functools import reduce
 import timeit
 import numpy as np
+import pickle
 
 from .encryptednet import EncryptedNet
 
@@ -193,3 +194,27 @@ class Cryptonet:
         print("\nTop 5 Most Common Misclassifications:")
         for (true_cls, pred_cls), count in sorted_misclassifications:
             print(f"True Class {true_cls} -> Predicted as {pred_cls}: {count} times")
+
+
+    def save_encrypted_model(self, filepath):
+    """Save the current state of the encrypted model to a file.
+
+    Args:
+        filepath (str): Path where the encrypted model will be saved.
+    """
+    if self.verbosity:
+        print(f"Saving encrypted model to {filepath}...")
+
+    with open(filepath, 'wb') as f:
+        # Save necessary attributes
+        state = {
+            'p_moduli': self.p_moduli,
+            'coeff_modulus': self.n,
+            'precision': self.precision,
+            'encryptors': [encryptor.save_state() for encryptor in self.encryptors],
+            # Add other necessary states here
+        }
+        pickle.dump(state, f)
+
+    if self.verbosity:
+        print("Encrypted model saved successfully.")
