@@ -149,3 +149,6 @@ class Dataset:
         """ Validating dataset integrity and labeling consistency """
         if len(dataset) != len(labels):
             raise ValueError("The number of images does not match the number of labels.")
+        for i, img in enumerate(dataset):
+            if img.shape != dataset[0].shape:
+                raise ValueError(f"Image at index {i} has an inconsistent shape.")
