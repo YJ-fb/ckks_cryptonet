@@ -21,6 +21,7 @@ class Experiment:
     verbose = False # 控制类实例是否打印详细信息
     
     def __init__(self, name, params, verbose = False):
+        # 初始化相关参数
         self.name = name
         self.params = params
         self.verbose = verbose
