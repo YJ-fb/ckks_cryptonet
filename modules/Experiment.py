@@ -45,6 +45,7 @@ class Experiment:
         if(analyze_object == None):  # 如果没有提供有效的对象或文件，则不执行任何操作
             pass
         else:
+             # 打印分析对象中的数据、轮次、最高准确率等信息
             print("Results:")
             print(analyze_object.data)
             print("")
