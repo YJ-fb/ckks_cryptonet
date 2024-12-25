@@ -218,3 +218,27 @@ class Cryptonet:
 
         if self.verbosity:
             print("Encrypted model saved successfully.")
+
+    def load_encrypted_model(self, filepath):
+    """Load an encrypted model from a file.
+
+    Args:
+        filepath (str): Path to the saved encrypted model file.
+    """
+    if self.verbosity:
+        print(f"Loading encrypted model from {filepath}...")
+
+    with open(filepath, 'rb') as f:
+        state = pickle.load(f)
+        
+        # Restore necessary attributes
+        self.p_moduli = state['p_moduli']
+        self.n = state['coeff_modulus']
+        self.precision = state['precision']
+        
+        # Assuming EncryptedNet has a method `load_state` to restore its state
+        self.encryptors = [EncryptedNet.load_state(state_dict, self.test, self.test_labels, self.model, self.n, p_modulus, self.precision, False) 
+                           for state_dict, p_modulus in zip(state['encryptors'], self.p_moduli)]
+
+    if self.verbosity:
+        print("Encrypted model loaded successfully.")
