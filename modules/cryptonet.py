@@ -156,3 +156,16 @@ class Cryptonet:
             x0, x1 = x1 - q * x0, x0
         if x1 < 0: x1 += b0
         return x1
+    def analyze_predictions(self):
+        """Analyze prediction results and provide insights."""
+        if self.verbosity:
+            print("Analyzing predictions...")
+    
+        # Assuming predict() has been called and cn_pred is available
+        cn_pred = np.argmax(self.crt_inverse([encryptor.get_results() for encryptor in self.encryptors], self.p_moduli), axis=1)
+        l_pred = np.argmax(self.test_labels, axis=1)
+
+        # Calculate per-class accuracy
+        classes = range(10)  # Assuming 10 classes for MNIST dataset
+        class_accuracy = {cls: {'correct': 0, 'total': 0} for cls in classes}
+        
