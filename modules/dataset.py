@@ -146,4 +146,6 @@ class Dataset:
          plt.show()
 
     def verify_integrity(self, dataset, labels):
-        """   """
+        """ Validating dataset integrity and labeling consistency """
+        if len(dataset) != len(labels):
+            raise ValueError("The number of images does not match the number of labels.")
