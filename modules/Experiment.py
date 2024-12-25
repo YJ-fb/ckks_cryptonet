@@ -79,7 +79,8 @@ class Experiment:
             print("Best parameters (val_loss) rank:")
             print(analyze_object.best_params('val_loss', ['acc', 'loss', 'val_loss']))
             print("")
-            
+
+            # 绘制不同类型的图表以可视化训练过程
             # line plot
             analyze_object.plot_line('val_acc')
             
