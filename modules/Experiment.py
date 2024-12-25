@@ -36,7 +36,7 @@ class Experiment:
     def plotResults(self, scan_object = None, analyze_file = None):
         analyze_object = None
         
-        if(scan_object != None):
+        if(scan_object is not None):  # 如果提供了scan对象，则创建一个Analyze对象
             analyze_object = talos.Analyze(scan_object)         
         
         if(analyze_file != None):
