@@ -105,7 +105,7 @@ class Experiment:
         dataset = keras.datasets.mnist
         (train_images, train_labels), (test_images, test_labels) = dataset.load_data()
 
-        # standardize the pixel values from 0-255 to 0-1
+        # 标准化像素值从0-255到0-1，并调整形状以适应模型输入
         train_images = util.reshapeSet(train_images)
         test_images = util.reshapeSet(test_images)
                 
@@ -145,8 +145,8 @@ p = {'last_activation': ['softmax'],
           'learning_rate': lr}
 
 exp = Experiment(verbose = True, params = p, name = 'DenseDropout01')
-#exp.plotResults(exp.run())
-#exp.plotResults(None, 'BestEvaluation03/113019213503.csv')
-#exp.computeResult()
+exp.plotResults(exp.run())
+exp.plotResults(None, 'BestEvaluation03/113019213503.csv')
+exp.computeResult()
 exp.plotResults(None, "all_results/final.csv")
 
