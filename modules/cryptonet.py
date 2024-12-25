@@ -18,6 +18,17 @@ class Cryptonet:
             precision = 2,
             verbosity = False
     ):
+    """Initialize the Cryptonet class with necessary parameters.
+
+                Args:
+                    test (numpy.ndarray): Test dataset.
+                    test_labels (numpy.ndarray): Labels for the test dataset.
+                    model (keras.Model or similar): The neural network model to evaluate.
+                    p_moduli (list, optional): List of plaintext moduli. Defaults to [].
+                    coeff_modulus (int, optional): Coefficient modulus value. Defaults to 8192.
+                    precision (int, optional): Precision for floating-point calculations. Defaults to 2.
+                    verbosity (bool, optional): Flag to control verbose output. Defaults to False.
+    """
         self.verbosity = verbosity
         self.p_moduli = p_moduli
         self.n = coeff_modulus
