@@ -30,8 +30,8 @@ class Experiment:
     def computeResult(self):
         os.chdir("all_results")  # 切换到包含结果文件的目录
         files = [i for i in glob.glob('*.{}'.format('csv'))]  # 获取所有CSV文件
-        final = pd.concat([pd.read_csv(f) for f in files ])
-        final.to_csv( "final.csv", index=False, encoding='utf-8-sig')
+        final = pd.concat([pd.read_csv(f) for f in files])  # 合并所有CSV文件的数据
+        final.to_csv("final.csv", index=False, encoding='utf-8-sig')  # 保存合并后的数据到新的CSV文件
     
     def plotResults(self, scan_object = None, analyze_file = None):
         analyze_object = None
