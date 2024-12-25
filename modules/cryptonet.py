@@ -197,24 +197,24 @@ class Cryptonet:
 
 
     def save_encrypted_model(self, filepath):
-    """Save the current state of the encrypted model to a file.
+        """Save the current state of the encrypted model to a file.
 
-    Args:
-        filepath (str): Path where the encrypted model will be saved.
-    """
-    if self.verbosity:
-        print(f"Saving encrypted model to {filepath}...")
+        Args:
+            filepath (str): Path where the encrypted model will be saved.
+        """
+        if self.verbosity:
+            print(f"Saving encrypted model to {filepath}...")
 
-    with open(filepath, 'wb') as f:
-        # Save necessary attributes
-        state = {
-            'p_moduli': self.p_moduli,
-            'coeff_modulus': self.n,
-            'precision': self.precision,
-            'encryptors': [encryptor.save_state() for encryptor in self.encryptors],
-            # Add other necessary states here
-        }
-        pickle.dump(state, f)
+        with open(filepath, 'wb') as f:
+            # Save necessary attributes
+            state = {
+                'p_moduli': self.p_moduli,
+                'coeff_modulus': self.n,
+                'precision': self.precision,
+                'encryptors': [encryptor.save_state() for encryptor in self.encryptors],
+                # Add other necessary states here
+            }
+            pickle.dump(state, f)
 
-    if self.verbosity:
-        print("Encrypted model saved successfully.")
+        if self.verbosity:
+            print("Encrypted model saved successfully.")
