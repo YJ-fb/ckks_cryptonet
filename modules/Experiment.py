@@ -100,7 +100,7 @@ class Experiment:
             analyze_object.plot_hist('val_acc', bins=40)
             
             
-            
+     # 运行实验，包括加载数据、预处理、训练模型并进行超参数扫描        
     def run(self):
         dataset = keras.datasets.mnist
         (train_images, train_labels), (test_images, test_labels) = dataset.load_data()
