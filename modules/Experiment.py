@@ -26,7 +26,7 @@ class Experiment:
         self.params = params
         self.verbose = verbose
         
-    
+    # 将同一目录下的所有CSV文件合并为一个最终的CSV文件
     def computeResult(self):
         os.chdir("all_results")
         files = [i for i in glob.glob('*.{}'.format('csv'))]
