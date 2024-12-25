@@ -47,6 +47,17 @@ class Cryptonet:
         Args:
             epochs (int, optional): Number of epochs to train the model. Defaults to 10.
         """
+        if self.verbosity:
+            print("Training the model...")
+        
+        # Assuming that 'model' has a fit method compatible with Keras models
+        self.model.fit(self.test, self.test_labels, epochs=epochs)
+
+        if self.verbosity:
+            print("Model trained successfully.")
+            print("Saving the trained model...")
+
+        # Save the trained model to file (implement saving logic here)
        
     def evaluate(self):
         for i in range(self.encryptors.__len__()):
