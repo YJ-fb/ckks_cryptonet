@@ -42,7 +42,7 @@ class Experiment:
         if(analyze_file != None):  # 如果提供了分析文件，则创建一个Reporting对象
             analyze_object = talos.Reporting(analyze_file)
         
-        if(analyze_object == None):
+        if(analyze_object == None):  # 如果没有提供有效的对象或文件，则不执行任何操作
             pass
         else:
             print("Results:")
