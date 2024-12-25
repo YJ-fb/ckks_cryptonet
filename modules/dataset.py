@@ -136,4 +136,6 @@ class Dataset:
             else:
                 return input_set.reshape(input_set.shape[0],dim,dim,last_dimension).astype( astype)/sub
 
-    def show_samples(self, dataset, labels, num_samples=5)
+    def show_samples(self, dataset, labels, num_samples=5):
+        """ Show some figures of samples """
+        fig, ax = plt.subplots(1, num_samples, figsize=(10, 2))
