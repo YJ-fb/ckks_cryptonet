@@ -18,7 +18,7 @@ class Cryptonet:
             precision = 2,
             verbosity = False
     ):
-    """Initialize the Cryptonet class with necessary parameters.
+        """Initialize the Cryptonet class with necessary parameters.
 
                 Args:
                     test (numpy.ndarray): Test dataset.
@@ -28,7 +28,7 @@ class Cryptonet:
                     coeff_modulus (int, optional): Coefficient modulus value. Defaults to 8192.
                     precision (int, optional): Precision for floating-point calculations. Defaults to 2.
                     verbosity (bool, optional): Flag to control verbose output. Defaults to False.
-    """
+        """
         self.verbosity = verbosity
         self.p_moduli = p_moduli
         self.n = coeff_modulus
