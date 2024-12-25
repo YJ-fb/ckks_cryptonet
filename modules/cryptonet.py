@@ -58,6 +58,15 @@ class Cryptonet:
             print("Saving the trained model...")
 
         # Save the trained model to file (implement saving logic here)
+
+    def load_trained_model(self, filepath):
+        """Load a pre-trained model from a file.
+
+        Args:
+            filepath (str): Path to the saved model file.
+        """
+        # Implement loading logic here
+        pass
        
     def evaluate(self):
         for i in range(self.encryptors.__len__()):
