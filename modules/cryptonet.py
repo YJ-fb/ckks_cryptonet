@@ -169,3 +169,27 @@ class Cryptonet:
         classes = range(10)  # Assuming 10 classes for MNIST dataset
         class_accuracy = {cls: {'correct': 0, 'total': 0} for cls in classes}
         
+        for true_label, pred_label in zip(l_pred, cn_pred):
+        class_accuracy[true_label]['total'] += 1
+        if true_label == pred_label:
+            class_accuracy[true_label]['correct'] += 1
+    
+        # Print per-class accuracy
+        print("Class-wise Accuracy:")
+        for cls in classes:
+            total = class_accuracy[cls]['total']
+            correct = class_accuracy[cls]['correct']
+            acc = (correct / total) * 100 if total > 0 else 0
+            print(f"Class {cls}: {acc:.2f}% ({correct}/{total})")
+    
+        # Identify most common misclassifications
+        misclassifications = {}
+        for true_label, pred_label in zip(l_pred, cn_pred):
+            if true_label != pred_label:
+                key = (true_label, pred_label)
+                misclassifications[key] = misclassifications.get(key, 0) + 1
+    
+        sorted_misclassifications = sorted(misclassifications.items(), key=lambda item: item[1], reverse=True)[:5]
+        print("\nTop 5 Most Common Misclassifications:")
+        for (true_cls, pred_cls), count in sorted_misclassifications:
+            print(f"True Class {true_cls} -> Predicted as {pred_cls}: {count} times")
