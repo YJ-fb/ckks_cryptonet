@@ -18,7 +18,7 @@ class Experiment:
     
     name = None
     params = None
-    verbose = False
+    verbose = False # 控制类实例是否打印详细信息
     
     def __init__(self, name, params, verbose = False):
         self.name = name
