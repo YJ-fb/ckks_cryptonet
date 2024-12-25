@@ -139,3 +139,8 @@ class Dataset:
     def show_samples(self, dataset, labels, num_samples=5):
         """ Show some figures of samples """
         fig, ax = plt.subplots(1, num_samples, figsize=(10, 2))
+        for i in range(num_samples):
+            ax[i].imshow(dataset[i].squeeze(), cmap='gray')
+            ax[i].set_title(f'Label: {np.argmax(labels[i])}')
+            ax[i].axis('off')
+         plt.show()
