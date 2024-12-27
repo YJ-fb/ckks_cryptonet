@@ -1,7 +1,7 @@
 # 基于Python的支持ckks加密的cryptonet
 
 ## 简介
-本项目是一个基于ckks的用于实现和测试深度学习模型加密推理的Python库，它是在微软开源项目 [CryptoNets](URL "https://github.com/microsoft/CryptoNets")  的基础上进行的扩展与改进。本项目旨在简化同态加密（HE）技术的应用，支持训练神经网络模型，并能够在不泄露数据隐私的情况下执行加密推理。
+本项目是一个基于ckks的用于实现和测试深度学习模型加密推理的Python库，它是在微软开源项目 [CryptoNets](URL "https://github.com/microsoft/CryptoNets")  的基础上进行的扩展与改进。本项目旨在简化同态加密（HE）技术的应用，支持训练神经网络模型，并能够在不泄露用户的数据隐私的情况下执行加密推理。
 
 ## 特性
 - 继承自CryptoNets：保留了原始项目的核心功能和结构。
