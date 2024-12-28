@@ -7,6 +7,7 @@ from skimage.util import view_as_blocks
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras import utils
 from os import path
+import matplotlib.pyplot as plt
 
 
 class Dataset:
@@ -135,3 +136,19 @@ class Dataset:
             else:
                 return input_set.reshape(input_set.shape[0],dim,dim,last_dimension).astype( astype)/sub
 
+    def show_samples(self, dataset, labels, num_samples=5):
+        """ Show some figures of samples """
+        fig, ax = plt.subplots(1, num_samples, figsize=(10, 2))
+        for i in range(num_samples):
+            ax[i].imshow(dataset[i].squeeze(), cmap='gray')
+            ax[i].set_title(f'Label: {np.argmax(labels[i])}')
+            ax[i].axis('off')
+         plt.show()
+
+    def verify_integrity(self, dataset, labels):
+        """ Validating dataset integrity and labeling consistency """
+        if len(dataset) != len(labels):
+            raise ValueError("The number of images does not match the number of labels.")
+        for i, img in enumerate(dataset):
+            if img.shape != dataset[0].shape:
+                raise ValueError(f"Image at index {i} has an inconsistent shape.")
