@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-@author: Marzio Monticelli (1459333)
-"""
 
 from os import path
 from . import model as md
