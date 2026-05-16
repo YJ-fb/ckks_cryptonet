@@ -90,3 +90,12 @@
 
 ## 贡献
 欢迎贡献代码！请先阅读贡献指南。
+
+
+## 项目声明 Project Statement
+
+本项目的作者及单位
+
+    项目名称(Project Name):ckks-cryptonet-python
+    项目者 (Author) : Jing Yang
+    作者单位(Affiliation):暨南大学网络空间安全学院(College of Cyber Security,Jinan university)
